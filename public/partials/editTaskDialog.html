@@ -1,0 +1,41 @@
+<md-dialog style="width: 80%;">
+    <md-toolbar class=""><h1>Edit ToDo</h1></md-toolbar>
+    <md-content>
+
+
+        <md-input-container flex>
+            <label>Task</label>
+            <input ng-model="taskToEdit.Task">
+        </md-input-container>
+
+        <md-input-container flex>
+            <label>Description</label>
+            <input ng-model="taskToEdit.Desc">
+        </md-input-container>
+
+        <span>Priority</span>
+        <md-radio-group ng-model="taskToEdit.Priority" >
+            <md-radio-button value="High">High</md-radio-button>
+            <md-radio-button value="Medium"> Medium </md-radio-button>
+            <md-radio-button value="Low">Low</md-radio-button>
+        </md-radio-group>
+
+        <md-input-container flex>
+            <label>Due Date</label>
+            <input type="date" ng-model="taskToEdit.DueDate">
+        </md-input-container>
+
+    </md-content>
+
+    <div class="md-actions" layout="row">
+        <span flex></span>
+        <md-button ng-click="cancel()" class="md-warn">
+            Cancel
+        </md-button>
+
+        <md-button ng-click="done()" class="md-primary">
+            Done
+        </md-button>
+    </div>
+</md-dialog>
+
