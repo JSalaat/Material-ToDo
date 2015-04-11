@@ -7,15 +7,29 @@ materialToDo.constant("basePath", "http://localhost:7000");
 
 materialToDo.config(function($stateProvider,$urlRouterProvider,$locationProvider,$mdThemingProvider){
 
-    $mdThemingProvider
+/*    $mdThemingProvider
         .theme('docs-dark', 'default')
-        .primaryPalette('yellow');
+        .primaryPalette('yellow')
         //.dark()
         //.theme('default')
-        //.primaryPalette('yellow')
-        //.accentPalette('pink');
+        .primaryPalette('yellow')
+        .accentPalette('pink');
         //.warnPalette('red')
-        //.backgroundPalette('blue');
+        //.backgroundPalette('blue');*/
+    /*$mdThemingProvider
+        .theme('default')
+        .primaryPalette('green')
+        .accentPalette('indigo')
+        .warnPalette('red')
+        .backgroundPalette('blue-grey')*/
+
+        $mdThemingProvider.theme('black')
+            .primaryPalette('blue', {
+                'default': '900' // by default use shade 900 from the grey palette for primary intentions
+
+            });
+
+        $mdThemingProvider.setDefaultTheme('black');
 
     $stateProvider
       .state('signUp',{
