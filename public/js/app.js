@@ -3,7 +3,7 @@
  */
 var materialToDo = angular.module('materialToDo', ['ngMaterial','ui.router']);
 
-materialToDo.constant("basePath", "http://localhost:7000");
+materialToDo.constant("basePath", "https://materialtodo.herokuapp.com");
 
 materialToDo.config(function($stateProvider,$urlRouterProvider,$locationProvider,$mdThemingProvider){
 
