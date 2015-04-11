@@ -4,7 +4,7 @@
 
 var mongoose = require("mongoose");
 var q = require("q");
-var db = mongoose.connect("mongodb://localhost/MaterialToDoDb", function(err){
+var db = mongoose.connect("mongodb://admin:admin@ds029640.mongolab.com:29640/materialtodo", function(err){
     if(err){
         console.log("Error in connecting");
         console.log(err);
