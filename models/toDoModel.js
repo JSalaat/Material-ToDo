@@ -7,7 +7,7 @@ var q = require("q");
 
 
 var ToDoSchema = mongoose.Schema({
-    UiD:String,
+    UiD:{ type :String},
     Task:String,
     Desc:String,
     Priority:String,
@@ -38,7 +38,7 @@ exports.saveToDoToDb = function(toDoObj){
 exports.ToDoFromDbByUid = function(Uid){
     var defered = q.defer();
 
-    ToDoModel.find({Uid:Uid},function(err,data){
+    ToDoModel.find({UiD:Uid},function(err,data){
         if(err){
             console.log("Error in Finding ToDo's");
             console.log(err);
@@ -48,6 +48,44 @@ exports.ToDoFromDbByUid = function(Uid){
             defered.resolve(data);
         }else{
             console.log("No Todo's Found of user id :"+Uid);
+            defered.resolve(data);
+        }
+    });
+    return defered.promise;
+};
+
+exports.editToDo = function(uid,obj){
+    var defered = q.defer();
+
+    ToDoModel.update({_id:uid},obj,function(err,data){
+        if(err){
+            console.log("Error ToDo's");
+            console.log(err);
+            defered.reject(err);
+        }else if(data){
+            console.log("Successfully Edited ToDo ");
+            defered.resolve(data);
+        }else{
+            console.log("No Todo Found of user id :"+uid);
+            defered.resolve(data);
+        }
+    });
+    return defered.promise;
+};
+
+exports.updateToDo = function(uid,obj){
+    var defered = q.defer();
+
+    ToDoModel.update({_id:uid},obj,function(err,data){
+        if(err){
+            console.log("Error in updating ToDo's");
+            console.log(err);
+            defered.reject(err);
+        }else if(data){
+            console.log("Successfully updated ToDo ");
+            defered.resolve(data);
+        }else{
+            console.log("No Todo Found of user id :"+uid);
             defered.resolve(data);
         }
     });

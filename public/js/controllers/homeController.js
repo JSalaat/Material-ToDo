@@ -2,7 +2,7 @@
  * Created by M.JUNAID on 2015-03-09.
  */
 
-materialToDo.controller('homeController', function($scope, $mdSidenav,$mdDialog,$mdBottomSheet,$timeout,actionService,$mdToast,$http,userService,basePath){
+materialToDo.controller('homeController', function($scope,$state,$mdSidenav,$mdDialog,$mdBottomSheet,$timeout,actionService,$mdToast,$http,userService,basePath){
 
     $scope.toastPosition = {
         bottom: true,
@@ -31,34 +31,65 @@ materialToDo.controller('homeController', function($scope, $mdSidenav,$mdDialog,
         $mdSidenav(menuId).toggle();
     };
 
-    //if(window.localStorage['toDoUser']) {
+    $scope.changeState = function(state){
+        $state.go(state)
+    };
+
+    $scope.logOut=function(){
+        userService.UserUid.set('');
+        localStorage.removeItem('toDoUser');
+        $scope.changeState('signIn')
+    };
+
+    if(window.localStorage['toDoUser']) {
 
         $scope.todos = [];
         $scope.currentUser = userService.UserUid.get();
         if($scope.currentUser==''){
             $scope.currentUser=JSON.parse(localStorage.getItem('toDoUser'));
+            userService.UserUid.set($scope.currentUser);
         }
 
         $scope.getTasksBy_uId = function () {
             $http.post((basePath+'/getTasks'),$scope.currentUser)
                 .success(function (data) {
                     console.log(data);
+                    $scope.remaining=0;
                     $scope.todos = data.resObj;
+                    $scope.todos.forEach(function(a){
+                        a.DueDate = new Date(a.DueDate)
+                    });
+                    for(var i=0;i<$scope.todos.length;i++){
+                        if($scope.todos[i].IsDone==false){
+                            $scope.remaining++
+                        }
+                    }
                 })
                 .error(function (err) {
                     console.log(err)
                 })
         };
+
         $scope.getTasksBy_uId();
 
-        /*    $scope.currentStateOfTasks = function(){
-         var tasksInArray=[];
-         $scope.todos.forEach(function(todo){
-         tasksInArray.push(JSON.stringify(todo));
-         });
-         var StringifiedTasks = JSON.stringify(tasksInArray);
-         localStorage.setItem('toDoTasks',StringifiedTasks);
-         };*/
+
+        $scope.currentStateOfTasks = function(index){
+            //actionService.clickedTask.set($scope.todos[index])
+            $http.post((basePath+'/updateToDo'),$scope.todos[index])
+                .success(function (data) {
+                    console.log(data);
+                    $scope.remaining=0;
+                    for(var i=0;i<$scope.todos.length;i++){
+                        if($scope.todos[i].IsDone==false){
+                            $scope.remaining++
+                        }
+                    }
+                    //$scope.todos = data.resObj;
+                })
+                .error(function (err) {
+                    console.log(err)
+                })
+        };
 
 
         $scope.showAddNewTaskDialog = function (ev) {
@@ -91,7 +122,8 @@ materialToDo.controller('homeController', function($scope, $mdSidenav,$mdDialog,
                 .ok('Yes, Delete It.')
                 .cancel('No');
 
-            $mdDialog.show(confirm).then(function () {
+            $mdDialog.show(confirm)
+                .then(function () {
 
                 $scope.taskToDelete = actionService.clickedTask.get();
 
@@ -135,9 +167,10 @@ materialToDo.controller('homeController', function($scope, $mdSidenav,$mdDialog,
                 }
             });
         };
-/*    }else{
+    }else{
         $scope.showSimpleToast("Please Sign In to Start");
-    }*/
+        $scope.changeState('signIn')
+    }
 
 
 });

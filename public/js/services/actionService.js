@@ -6,32 +6,32 @@ materialToDo.factory('actionService',function(){
     var _clickedAction = '';
     var _task = null;
 
-    var _setAllTasks = function(action){
+    var _setAction = function(action){
         _clickedAction = action
 
     };
 
-    var _getAllTasks = function(){
+    var _getAction = function(){
         return _clickedAction
     };
 
-    var _setTaskToEdit = function(index){
+    var _setTaskForAction = function(index){
         _task = index
 
     };
 
-    var _getTaskToEdit = function(){
+    var _getTaskForAction = function(){
         return _task
     };
 
     return{
         clickedAction:{
-            set:_setAllTasks,
-            get:_getAllTasks
+            set:_setAction,
+            get:_getAction
         },
         clickedTask:{
-            set:_setTaskToEdit,
-            get:_getTaskToEdit
+            set:_setTaskForAction,
+            get:_getTaskForAction
         }
     }
 

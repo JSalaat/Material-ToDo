@@ -5,7 +5,7 @@
 materialToDo.controller('editTaskController', function($scope,$mdDialog,actionService,$http,basePath) {
 
 
-    $scope.taskToEdit = actionService.taskToEdit.get();
+    $scope.taskToEdit = actionService.clickedTask.get();
     $scope.taskToEdit.DueDate = new Date($scope.taskToEdit.DueDate);
 
     $scope.cancel = function () {

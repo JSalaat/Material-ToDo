@@ -6,7 +6,7 @@ materialToDo.controller('addNewTaskController', function(userService,basePath,$s
 
     $scope.newTask={
         isDone:false,
-        Uid:userService.UserUid.get()
+        Uid:userService.UserUid.get()._id
     };
 
     $scope.cancel = function () {

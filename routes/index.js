@@ -55,9 +55,9 @@ router.post('/signIn',function(req,res){
 
 router.post('/getTasks', function(req,res){
   //console.log(req.body);
-  var _uid = req.body._uid;
+  var UiD = req.body._id;
 
-  toDoModel.ToDoFromDbByUid(_uid)
+  toDoModel.ToDoFromDbByUid(UiD)
       .then(function (data){
         if(data!==null){
           res.send({status:true, resObj : data});
@@ -73,7 +73,7 @@ router.post('/getTasks', function(req,res){
 
 router.post('/saveNewTodo', function(req,res){
   var newTodo = {
-    Uid: req.body.Uid,
+    UiD: req.body.Uid,
     Task: req.body.task,
     Desc: req.body.desc,
     IsDone: req.body.isDone,
@@ -100,6 +100,21 @@ router.post('/editTodo', function(req,res){
   var idToEdit = req.body._id;
 
   toDoModel.editToDo(idToEdit,todoToEdit)
+      .then(function (data){
+        res.send({status:true , resObj: data});
+      }, function (err){
+        res.send({status: false, err : err});
+      })
+});
+
+router.post('/updateToDo', function(req,res){
+  console.log(req.body);
+  var todoToUpdate = {
+    IsDone: req.body.IsDone
+  };
+  var idToEdit = req.body._id;
+
+  toDoModel.editToDo(idToEdit,todoToUpdate)
       .then(function (data){
         res.send({status:true , resObj: data});
       }, function (err){

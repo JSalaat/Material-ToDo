@@ -49,7 +49,7 @@ materialToDo.controller('signInController', function(userService,$scope,$mdToast
                     }
                     else{
                         console.log(data);
-                        $scope.toastMessage = 'There may be an error in the connection';
+                        $scope.toastMessage = 'UserName Not Found';
                         $scope.showSimpleToast()
                     }
                 }
