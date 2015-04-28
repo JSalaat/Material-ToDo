@@ -31,6 +31,11 @@ materialToDo.config(function($stateProvider,$urlRouterProvider,$locationProvider
             templateUrl:'partials/home.html',
             controller:'homeController',
             cache: false
+    }).state('about',{
+            url: "/about",
+            templateUrl:'partials/about.html',
+            controller:'aboutController',
+            cache: false
         });
 
     if(window.localStorage['toDoUser']){
