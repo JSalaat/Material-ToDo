@@ -8,6 +8,6 @@ The MEAN Stack ToDo App on the New Angular Material Design.
 - Write Edit Delete and Check If Complete..
 
 
-# Live Project Demo -> https://materialtodo.herokuapp.com/
+# Live Project Demo - https://materialtodo.herokuapp.com/
 
 Thanks.
