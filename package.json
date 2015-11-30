@@ -1,7 +1,7 @@
 {
-  "name": "server",
-  "version": "0.0.0",
-  "private": true,
+  "name": "Material-ToDo-Server",
+  "version": "1.0.1",
+  "private": false,
   "scripts": {
     "start": "node ./bin/www"
   },

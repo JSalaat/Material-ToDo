@@ -1,30 +1,30 @@
-<md-bottom-sheet class="md-grid">
-    <md-list layout-align="center center">
-        <md-item>
+<md-bottom-sheet class="md-grid" layout="column" ng-cloak>
+    <md-list flex layout="row" layout-align="center center">
+        <md-list-item>
             <md-button class="md-grid-item-content " aria-label="Edit" ng-click="listItemClick('edit')">
                 <div class="md-icon-container">
                     <md-inline-grid-icon icon class="icon ion-edit gridIcon"></md-inline-grid-icon>
                 </div>
                 <p class="md-grid-text"> Edit </p>
             </md-button>
-        </md-item>
+        </md-list-item>
 
-        <md-item>
+        <md-list-item>
             <md-button class="md-grid-item-content" aria-label="Delete" ng-click="listItemClick('delete')">
                 <div class="md-icon-container">
                     <md-inline-grid-icon icon class="icon ion-trash-a gridIcon"></md-inline-grid-icon>
                 </div>
                 <p class="md-grid-text"> Delete </p>
             </md-button>
-        </md-item>
+        </md-list-item>
 
-        <md-item>
+        <md-list-item>
             <md-button class="md-grid-item-content " aria-label="Nothing" ng-click="listItemClick('Do Nothing')">
                 <div class="md-icon-container">
                     <md-inline-grid-icon icon class="icon ion-checkmark-circled gridIcon"></md-inline-grid-icon>
                 </div>
                 <p class="md-grid-text"> Nothing </p>
             </md-button>
-        </md-item>
+        </md-list-item>
     </md-list>
 </md-bottom-sheet>

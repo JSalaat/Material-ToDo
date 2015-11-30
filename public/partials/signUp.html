@@ -5,72 +5,76 @@
                 <span class="md-flex">Sign Up</span>
             </div>
         </md-toolbar>
-        <md-content layout="row" layout-align="center center">
-            <md-card >
-                <md-card-content>
-                    <div layout layout-sm="column">
-                        <md-input-container flex>
-                            <label>UserName</label>
-                            <input ng-model="user.userName" required="userName" placeholder="username">
-                            <div ng-messages="user.userName.$error">
-                                <div ng-message="required">User name is required.</div>
-                            </div>
-                        </md-input-container>
-                    </div>
-                    <div layout layout-sm="column">
-                        <md-input-container flex>
-                            <label>First Name</label>
-                            <input ng-model="user.firstName"  required="firstName"placeholder="Firstname">
-                            <div ng-messages="user.firstName.$error">
-                                <div ng-message="required">First name is required.</div>
-                            </div>
-                        </md-input-container>
-                        <md-input-container flex>
-                            <label>Last Name</label>
-                            <input ng-model="user.lastName">
-                        </md-input-container>
-                    </div>
-                    <div layout layout-sm="column">
-                        <md-input-container flex>
-                            <label>Email Address</label>
-                            <input type="email" ng-model="user.email" required="email">
-                            <div ng-messages="user.email.$error">
-                                <div ng-message="required">Email is required.</div>
-                            </div>
-                        </md-input-container>
-                    </div>
-                    <div layout layout-sm="column">
-                        <md-input-container flex>
-                            <label>Password</label>
-                            <input type="password" ng-model="user.password" required="password">
-                            <div ng-messages="user.email.$error">
-                                <div ng-message="required">Set some password</div>
-                            </div>
-                        </md-input-container>
-                        <md-input-container flex>
-                            <label>Confirm Password</label>
-                            <input type="password" ng-model="cPassword" required="cPassword">
-                            <div ng-messages="user.email.$error">
-                                <div ng-message="required">Confirm it here</div>
-                            </div>
-                        </md-input-container>
-                    </div>
-
-                    <section layout="row" layout-sm="column" layout-align="center center" >
-                        <div flex="87"></div>
-                        <div>
-                            <md-button class="md-primary md-raised"  ng-click="signUp()">Sign Up</md-button>
+        <md-content layout="row" class="md-padding" layout-wrap layout-align="center center">
+            <div class="" flex="50" layout="column">
+                <md-card >
+                    <md-card-content>
+                        <div layout layout-sm="column">
+                            <md-input-container flex>
+                                <label>UserName</label>
+                                <input ng-model="user.userName" required="userName" >
+                                <div ng-messages="user.userName.$error">
+                                    <div ng-message="required">User name is required.</div>
+                                </div>
+                            </md-input-container>
                         </div>
-                    </section>
+                        <div layout layout-sm="column">
+                            <md-input-container flex>
+                                <label>First Name</label>
+                                <input ng-model="user.firstName"  required="firstName">
+                                <div ng-messages="user.firstName.$error">
+                                    <div ng-message="required">First name is required.</div>
+                                </div>
+                            </md-input-container>
+                            <md-input-container flex>
+                                <label>Last Name</label>
+                                <input ng-model="user.lastName">
+                            </md-input-container>
+                        </div>
+                        <div layout layout-sm="column">
+                            <md-input-container flex>
+                                <label>Email Address</label>
+                                <input type="email" ng-model="user.email" required="email">
+                                <div ng-messages="user.email.$error">
+                                    <div ng-message="required">Email is required.</div>
+                                </div>
+                            </md-input-container>
+                        </div>
+                        <div layout layout-sm="column">
+                            <md-input-container flex>
+                                <label>Password</label>
+                                <input type="password" ng-model="user.password" required="password">
+                                <div ng-messages="user.email.$error">
+                                    <div ng-message="required">Set some password</div>
+                                </div>
+                            </md-input-container>
+                            <md-input-container flex>
+                                <label>Confirm Password</label>
+                                <input type="password" ng-model="cPassword" required="cPassword">
+                                <div ng-messages="user.email.$error">
+                                    <div ng-message="required">Confirm it here</div>
+                                </div>
+                            </md-input-container>
+                        </div>
 
-                </md-card-content>
+                        <section layout="row" layout-sm="column" layout-align="end center" >
+                            <div flex="87"></div>
+                            <div>
+                                <md-button class="md-primary md-raised"  ng-click="signUp()">Sign Up</md-button>
+                            </div>
+                        </section>
 
-            </md-card>
+                    </md-card-content>
+
+                </md-card>
+            </div>
 
         </md-content>
         <div layout="row" layout-sm="column" layout-align="center center" ng-show="isSignUpClicked" class="positionCenter">
             <div>
-                <md-progress-circular class="md-hue-2" md-mode="indeterminate"></md-progress-circular>
+                <md-progress-circular class="md-hue-2" md-diameter="80"></md-progress-circular>
+
+
             </div>
         </div>
     </div>

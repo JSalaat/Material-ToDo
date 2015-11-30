@@ -6,42 +6,44 @@
                 <span class="md-flex">Sign In</span>
             </div>
         </md-toolbar>
-        <md-content layout="row" layout-align="center center">
-            <md-card>
-                <md-card-content >
-                    <md-content md-theme="docs-dark" class="md-padding" layout="row" layout-sm="column" style="font-size:1.2em">
-                        <md-input-container flex>
-                            <label class="md-accent">Username</label>
-                            <input ng-model="user.userName">
+        <md-content layout="row" class="md-padding" layout-wrap layout-align="center center">
+            <div class="" flex="50" layout="column">
+                <md-card>
+                    <md-card-content >
+                        <md-content md-theme="docs-dark" class="md-padding" layout="row" layout-sm="column" style="font-size:1.2em">
+                            <md-input-container flex>
+                                <label class="md-accent">Username</label>
+                                <input ng-model="user.userName">
 
-                        </md-input-container>
+                            </md-input-container>
 
-                        <md-input-container flex>
-                            <label>Password</label>
-                            <input type="password" ng-model="user.password">
+                            <md-input-container flex>
+                                <label>Password</label>
+                                <input type="password" ng-model="user.password">
 
-                        </md-input-container>
+                            </md-input-container>
 
-                    </md-content>
-                    <section layout="row" layout-sm="column" layout-align="end center" >
-                        <div>
-                            <md-button class="md-primary md-raised"  ng-click="signInCheck()">Sign In</md-button>
-                        </div>
-                    </section>
-                    <br/>
-                    <section layout="row" layout-sm="column" layout-align="end center" >
-                        <div flex="">Don't have an Account?</div>
-                        <div>
-                            <md-button class="md-accent md-raised"  ng-click="changeState('signUp')">Create an Account</md-button>
-                        </div>
-                    </section>
+                        </md-content>
+                        <section layout="row" layout-sm="column" layout-align="end center" >
+                            <div>
+                                <md-button class="md-primary md-raised"  ng-click="signInCheck()">Sign In</md-button>
+                            </div>
+                        </section>
+                        <br/>
+                        <section layout="row" layout-sm="column" layout-align="end center" >
+                            <div flex="">Don't have an Account?</div>
+                            <div>
+                                <md-button class="md-accent md-raised"  ng-click="changeState('signUp')">Create an Account</md-button>
+                            </div>
+                        </section>
 
-                </md-card-content>
-            </md-card>
+                    </md-card-content>
+                </md-card>
+            </div>
         </md-content>
         <div layout="row" layout-sm="column" layout-align="center center" ng-show="isSignInClicked" >
             <div>
-                <md-progress-circular class="md-hue-2" md-mode="indeterminate"></md-progress-circular>
+                <md-progress-circular class="md-hue-2" md-diameter="80"></md-progress-circular>
             </div>
         </div>
 

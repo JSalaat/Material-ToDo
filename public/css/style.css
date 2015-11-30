@@ -1,3 +1,10 @@
+body {
+    font: 14px 'Helvetica Neue', Roboto,sans-serif;
+}
+
+a {
+    color: #00B7FF;
+}
 .positionCenter {
     position: relative;
     bottom: 130px;
@@ -61,18 +68,18 @@ https://github.com/google/material-design-icons
 
 .redColor{
     color: red;
-    position: relative;
-    top: 25px;
+    /*position: relative;*/
+    /*top: 25px;*/
 }
 .orangeColor{
     color: orange;
-    position: relative;
-    top: 25px;
+    /*position: relative;*/
+    /*top: 25px;*/
 }
 .greenColor{
     color: green;
-    position: relative;
-    top: 25px;
+    /*position: relative;*/
+    /*top: 25px;*/
 }
 
 .docs-menus{
