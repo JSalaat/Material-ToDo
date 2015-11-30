@@ -1,0 +1,25 @@
+{
+  "name": "Material-ToDo",
+  "homepage": "https://github.com/mjunaidsalaat/Material-ToDo",
+  "authors": [
+    "M. Junaid Salaat <mjunaidsalaat@gmail.com>"
+  ],
+  "description": "To Do App",
+  "main": "app.js",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-material": "master",
+    "angular-ui-router": "~0.2.15"
+  },
+  "resolutions": {
+    "angular-material": "~0.11.4"
+  }
+}
