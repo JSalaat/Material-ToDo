@@ -1,5 +1,7 @@
 body {
-    font: 14px 'Helvetica Neue', Roboto,sans-serif;
+    /*font: 16px  RobotoDraft, "Helvetica Neue", Roboto ,sans-serif;*/
+    font: 14px "Helvetica Neue", "Lucida Grande", RobotoDraft, Helvetica, Arial, sans-serif;
+
 }
 
 a {

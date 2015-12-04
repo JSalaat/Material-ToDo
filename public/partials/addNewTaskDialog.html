@@ -2,27 +2,38 @@
     <md-toolbar class=""><h1>Add a ToDo</h1></md-toolbar>
     <md-content>
         <div class="md-dialog-content">
-            <md-input-container flex>
-                <label>Task</label>
-                <input ng-model="newTask.task">
-            </md-input-container>
+            <div>
+                <md-input-container class="md-block">
+                    <label>Task</label>
+                    <input ng-model="newTask.task">
+                </md-input-container>
+            </div>
+            <br/>
 
-            <md-input-container flex>
-                <label>Description</label>
-                <input ng-model="newTask.desc">
-            </md-input-container>
+            <div>
+                <md-input-container class="md-block">
+                    <label>Description</label>
+                    <input ng-model="newTask.desc">
+                </md-input-container>
+            </div>
+            <br/>
 
-            <span>Priority</span>
-            <md-radio-group ng-model="newTask.priority">
-                <md-radio-button value="High">High</md-radio-button>
-                <md-radio-button value="Medium"> Medium </md-radio-button>
-                <md-radio-button value="Low">Low</md-radio-button>
-            </md-radio-group>
+            <div>
+                <h3>Priority</h3>
+                <md-radio-group ng-model="newTask.priority">
+                    <md-radio-button value="High">High</md-radio-button>
+                    <md-radio-button value="Medium"> Medium </md-radio-button>
+                    <md-radio-button value="Low">Low</md-radio-button>
+                </md-radio-group>
+            </div>
 
-            <md-input-container flex>
-                <label>Due Date</label>
-                <input type="date" ng-model="newTask.dueDate">
-            </md-input-container>
+            <br/>
+            <div>
+                <md-input-container class="md-block">
+                    <label>Due Date</label>
+                    <input type="date" ng-model="newTask.dueDate">
+                </md-input-container>
+            </div>
         </div>
 
     </md-content>
